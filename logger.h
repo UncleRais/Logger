@@ -53,8 +53,6 @@ class Logger {
 			if (_colored) reset_color(_out->out);
 		};
 
-		friend class LoggerDestroyer;
-
 	public:
 		static Logger& get(const MODE& mode = TRACE, std::unique_ptr<stream_base>&& out = nullptr) {
 
