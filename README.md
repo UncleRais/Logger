@@ -30,4 +30,4 @@ int main(int argc, char* argv) {
     Logger::get().log(ERRORS)  << "I will be displayed" << std::endl;
 }
 ```
-Every line will be displayed.
+Last three lines will be displayed.
