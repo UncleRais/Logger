@@ -8,9 +8,9 @@ void logger_time_test() {
     using namespace logger;
     using namespace std::string_literals;
     auto& log = Logger::get(MODE::INFO, true, std::make_unique<cout_stream>());
-    log(MODE::INFO)    << "Calculation is started\n";
+    //log(MODE::INFO)    << "Calculation is started\n";
     // Some computations and routine
-    log(MODE::INFO)    << "Calculation is finished\n";
+    //log(MODE::INFO)    << "Calculation is finished\n";
 }
 
 void logger_cout_test() {
