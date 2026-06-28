@@ -55,7 +55,21 @@ class Logger {
 
 	public:
 		static Logger& get(MODE mode = MODE::INFO, bool time = false, std::unique_ptr<stream_base>&& out = nullptr);
-		std::ostream& operator()(MODE mode);
+
+		std::ostream& operator()(MODE mode = MODE::INFO);
+
+        template <class T>
+        std::ostream& operator << (const T& obj) {
+            this->operator()() << obj;
+            return _out->_out;
+        }
+
+        template <class T>
+        std::ostream& operator << (T&& obj) {
+            this->operator()() << obj;
+            return _out->_out;
+        }
+
         std::streambuf* const get_buffer() const;
         void set_buffer(std::streambuf* const buffer);
 };
